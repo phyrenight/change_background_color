@@ -1,16 +1,18 @@
 window.onload = function(){
-    let colors = ["blue", "green", "orange", "red", "pink", "teal"];
-    var counter = 0;
+    var colors = []
+    const max_number = 255;
     document.getElementById("click_me").onclick = function() {
-        if( counter <= 4 ){
-            counter += 1;
-
+        colors = [];
+        for(i = 0; i < 3; i++){
+            colors.push(get_random_number(max_number));
         }
-        else {
-            counter = 0
-        }
-        document.body.style.background = colors[counter]
-        console.log(colors[counter])
+        rgb_color = 'rgb('+colors[0]+','+colors[1]+','+colors[2]+')';
+        document.body.style.background = rgb_color;
     };
+}
 
+
+
+function get_random_number(max){
+    return Math.floor(Math.random() * Math.floor(max))
 }
