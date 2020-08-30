@@ -1,7 +1,8 @@
 window.onload = function(){
-    var colors = []
-    const max_number = 255;
-    document.getElementById("click_me").onclick = function() {
+    let colors = []
+    const max_number = 256;
+    const button = document.getElementById("click_me")
+    button.onclick = function() {
         colors = [];
         for(i = 0; i < 3; i++){
             colors.push(get_random_number(max_number));
